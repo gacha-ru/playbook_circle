@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t gacharion/circleci-test .
+
+test:
+  pre:
+    - docker run -i -t gacharion/circleci-test /bin/echo hello world
