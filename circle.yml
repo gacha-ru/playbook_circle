@@ -10,3 +10,4 @@ dependencies:
 test:
   pre:
     - docker run -i -t gacharion/circleci-test /bin/echo hello world
+    - docker ps
