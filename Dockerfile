@@ -9,6 +9,7 @@ RUN wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 RUN curl -O http://rpms.famillecollet.com/RPM-GPG-KEY-remi; rpm --import RPM-GPG-KEY-remi
 RUN rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
 RUN yum -y update && yum -y upgrade
+RUN yum -y install libdwarf
 
 # setup tools
 RUN yum -y groupinstall --enablerepo=epel,remi "Development Tools"
