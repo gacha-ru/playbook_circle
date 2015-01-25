@@ -14,5 +14,13 @@ RUN yum -y update && yum -y upgrade
 # setup tools
 RUN yum -y groupinstall --enablerepo=epel,remi "Development Tools"
 
+# setuptools
+RUN yum -y python-setuptools
+
+# pip
+RUN easy_install pip
+RUN pip install ansible
+RUN pip freeze
+
 # expose http port
 EXPOSE 80
